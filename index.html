@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
     <link rel="stylesheet" href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="main.js"></script>
 
 </head>
@@ -20,9 +21,29 @@
         </h2>
     </header>
     <main>
-        <h3 class=>Instruction</h3>
+        <div>
+        <h3 >Instruction</h3>
         <p>This quiz is designed for a better understanding of Canada. The Total Number of Questions is 10. Take Your
             time and enjoy the quiz!</p>
+        </div>
+        <div id="testNote">
+            <h4>NOTE</h4>
+            <div class="ui list" id="notecontent">
+                <div class="item">
+                    <i class="right triangle icon"></i>
+                    <div class="content">
+                      <div class="description">Click the 'START QUIZ' button given in the bottom of this page to Start the test.</div>
+                    </div>
+                </div>
+                  <div class="item">
+                    <i class="right triangle icon"></i>
+                    <div class="content">
+                      <div class="description">Do not refresh the Page during the test.</div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
         <!-- start button -->
         <div id="startbutton">
             <button class="small ui primary button start" type="button" name="starttest" id="starttest"

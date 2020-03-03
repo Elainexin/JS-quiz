@@ -19,7 +19,9 @@ function nextquestion(){
 	{
 		current = total;
 	}
-	document.getElementById("ques"+current).style.display = "block";
+    document.getElementById("ques"+current).style.display = "block";
+
+    
     document.getElementById("current_show_ques").value = current;
     if (current == total){
         document.getElementById("next").disabled="disabled";
@@ -29,7 +31,9 @@ function nextquestion(){
     }
 }
 function starttest(){
+ 
     document.getElementById('showquesbox').style.display="block";
+    $("#testNote").slideUp("6000");
     document.getElementById('starttest').disabled="disabled";
     document.getElementById('starttest').style.display = "none";
     nextquestion();

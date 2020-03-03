@@ -35,9 +35,21 @@ main h3 {
 p {
     font-size: 120%;
 }
+#testNote{
+    border: gainsboro solid 1px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#testNote h4{
+    margin-bottom: 0px;
+    text-align: center;
+    background-color: gainsboro;
+}
 
 form{
-    padding: 0 8%;
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 
@@ -72,7 +84,13 @@ main h3{
 }
 #picture {
     padding: 0 20%;
-    width: 100%;
-    height: 100px;
+    height: 110px;
+
+}
+
+#notecontent{
+    margin-bottom: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
 
 }
