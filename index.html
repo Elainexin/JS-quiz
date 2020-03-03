@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Canada Quiz Project</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h2 class="ui center aligned icon  header ">
+            <i class=" heart outline icon"></i>
+            Discover Canada
+        </h2>
+    </header>
+    <main>
+        <h3 class=>Instruction</h3>
+        <p>This quiz is designed for a better understanding of Canada. The Total Number of Questions is 10. Take Your
+            time and enjoy the quiz!</p>
+        <!-- start button -->
+        <div id="startbutton">
+            <button class="small ui primary button start" type="button" name="starttest" id="starttest"
+                value="START TEST" onclick="starttest()">START QUIZ</button>
+        </div>
+        <!-- question form -->
+        <form class="ui form" name="quiz">
+            <div id="showquesbox" class="showquesbox_classs" style="display: none;">
+                <!-- question 1 -->
+                <div class="questions" id="ques1" style="display: none;">
+                    <div class="questions">
+                        <div>1. What are Canada's official languages? </div>
+                    </div>
+                    <div class="answers" name="answers">
+                        <div class="choice"><input type="radio" name="question1" value="0"> A. English and Acadian</div>
+                        <div class="choice"><input type="radio" name="question1" value="1"> B. French, English and
+                            Michif</div>
+                        <div class="choice"><input type="radio" name="question1" value="2"> C. English and French</div>
+                        <div class="choice"><input type="radio" name="question1" value="3"> D. French, English and
+                            Inuktitut </div>
+                    </div>
+                </div>
+                <!-- question 2 -->
+                <div class="questions" id="ques2" style="display: none;">
+                    <div class="questions">
+                        <div>2. What's the only official bilingual province in Canada?</div>
+                    </div>
+                    <div class="answers">
+                        <div class="choice"><input type="radio" name="question2" value="0"> A. Quebec</div>
+                        <div class="choice"><input type="radio" name="question2" value="1"> B. Ontario</div>
+                        <div class="choice"><input type="radio" name="question2" value="2"> C. New Brunswick </div>
+                        <div class="choice"><input type="radio" name="question2" value="3"> D. Manitoba </div>
+                    </div>
+                </div>
+                <!-- question 3 -->
+                <div class="questions" id="ques3" style="display: none;">
+                    <div class="questions">
+                        <div>3. Which province has its own time zone?</div>
+                    </div>
+                    <div class="answers">
+                        <div class="choice"><input type="radio" name="question3" value="0"> A. British Columbia</div>
+                        <div class="choice"><input type="radio" name="question3" value="1"> B. Newfoundland and Labrador
+                        </div>
+                        <div class="choice"><input type="radio" name="question3" value="2"> C. Nova Scotia </div>
+                        <div class="choice"><input type="radio" name="question3" value="3"> D. Nunavut </div>
+                    </div>
+                </div>
+                <!-- question 4 -->
+                <div class="questions" id="ques4" style="display: none;">
+                    <div class="questions">
+                        <div>4. Who are First Nations people?</div>
+                    </div>
+                    <div class="answers">
+                        <div class="choice"><input type="radio" name="question4" value="0"> A. All aboriginal people who
+                            are not Métis or Inuit</div>
+                        <div class="choice"><input type="radio" name="question4" value="1"> B. Indians who live on
+                            reserve land</div>
+                        <div class="choice"><input type="radio" name="question4" value="2"> C. People of mixed
+                            Aboriginal and European ancestry </div>
+                        <div class="choice"><input type="radio" name="question4" value="3"> D. Aboriginal people who
+                            live on the Praries </div>
+                    </div>
+                </div>
+                <!-- question 5 -->
+                <div class="questions" id="ques5" style="display: none;">
+                    <div class="questions">
+                        <div>5. Who is Wayne Gretzky?</div>
+                    </div>
+                    <div class="answers">
+                        <div class="choice"><input type="radio" name="question5" value="0"> A. A world record sprinter
+                            and double Olympic gold medalist</div>
+                        <div class="choice"><input type="radio" name="question5" value="1"> B. One of the greatest
+                            hockey players of all time</div>
+                        <div class="choice"><input type="radio" name="question5" value="2"> C. A famous Canadian
+                            filmmaker</div>
+                        <div class="choice"><input type="radio" name="question5" value="3"> D. A Noble Prize-winning
+                            scientist </div>
+                    </div>
+                </div>
+                <!-- question 6 -->
+                <div class="questions" id="ques6" style="display: none;">
+                    <div class="questions">
+                        <div>6. What's the population of Canada</div>
+                    </div>
+                    <div class="answers">
+                        <div class="choice"><input type="radio" name="question6" value="0"> A. About 24 million</div>
+                        <div class="choice"><input type="radio" name="question6" value="1"> B. About 31 million</div>
+                        <div class="choice"><input type="radio" name="question6" value="2"> C. About 34 million</div>
+                        <div class="choice"><input type="radio" name="question6" value="3"> D. About 42 million </div>
+                    </div>
+                </div>
+                <!-- question 7-->
+                <div class="questions" id="ques7" style="display: none;">
+                    <div class="questions">
+                        <div>7. Name the five Great Lakes.</div>
+                    </div>
+                    <div class="answers">
+                        <div class="choice"><input type="radio" name="question7" value="0"> A. Erie, Huron, Michigan,
+                            Ontario and Simcoe</div>
+                        <div class="choice"><input type="radio" name="question7" value="1"> B.
+                            Huron,Michigan,Nipigon,Ontario, Superior</div>
+                        <div class="choice"><input type="radio" name="question7" value="2"> C. Michigan, Okanagan,
+                            Superior, Huron and Erie</div>
+                        <div class="choice"><input type="radio" name="question7" value="3"> D. Erie, Huron, Michigan,
+                            Ontatio and Superior </div>
+                    </div>
+                </div>
+                <!-- question 8-->
+                <div class="questions" id="ques8" style="display: none;">
+                    <div class="questions">
+                        <div>8. Name the three levels of government in Canada.</div>
+                    </div>
+                    <div class="answers">
+                        <div class="choice"><input type="radio" name="question8" value="0"> A. Federal, provincial or
+                            territorial and regional</div>
+                        <div class="choice"><input type="radio" name="question8" value="1"> B. Federal, state and
+                            municipal</div>
+                        <div class="choice"><input type="radio" name="question8" value="2"> C. Federal, provincial or
+                            territorial and municipal</div>
+                        <div class="choice"><input type="radio" name="question8" value="3"> D. Federal, provincial and
+                            territorial </div>
+                    </div>
+                </div>
+                <!-- question 9-->
+                <div class="questions" id="ques9" style="display: none;">
+                    <div class="questions">
+                        <div>9. Who is Canada's head of state?</div>
+                    </div>
+                    <div class="answers">
+                        <div class="choice"><input type="radio" name="question9" value="0"> A. The Governor General
+                        </div>
+                        <div class="choice"><input type="radio" name="question9" value="1"> B. The Sovereign (Queen or
+                            King)</div>
+                        <div class="choice"><input type="radio" name="question9" value="2"> C. The Prime Minister</div>
+                        <div class="choice"><input type="radio" name="question9" value="3"> D. The Lieutenant Governor
+                        </div>
+                    </div>
+                </div>
+                   <!-- question 10-->
+                   <div class="questions" id="ques10" style="display: none;">
+                    <div class="questions">
+                        <div>10. How is Prime Minister chosen?</div>
+                    </div>
+                    <div class="answers">
+                        <div class="choice"><input type="radio" name="question10" value="0"> A. Canadian voters elect the PM
+                        </div>
+                        <div class="choice"><input type="radio" name="question10" value="1"> B. The Queen decides who to appoint as PM</div>
+                        <div class="choice"><input type="radio" name="question10" value="2"> C. Members of Parliament elect the PM</div>
+                        <div class="choice"><input type="radio" name="question10" value="3"> D. The leader of the political party with the most seats in the House of Commons is appointed by the Governor General to become PM 
+                        </div>
+                    </div>
+                </div>
+                <!-- the next button -->
+                <div id="next">
+                    <div class="small ui animated button" tabindex="0" type="button" name="next" id="next" value="Next"
+                        onclick="nextquestion()">
+                        <div class="visible content">Next</div>
+                        <div class="hidden content">
+                            <i class="right arrow icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- submit quiz button -->
+                <div id="end">
+                    <button class="small ui primary button" type="button" name="endtest" id="endtest"
+                        style="visibility:hidden;" value="Submit" onclick="checkAnswers()">Submit</button>
+                </div>
+
+
+            </div>
+
+
+
+            <input type="hidden" id="current_show_ques" value="0">
+            <input type="hidden" id="total_question" value="10">
+            <!-- the result section -->
+            <div id="after_submit">
+                <p id="number_correct"></p>
+                <p id="message"></p>
+                <img id="picture">
+                <button class="small ui primary button" type="button" onclick="showAll()"
+                        >Check Answers</button>
+            </div>
+
+        </form>
+
+    </main>
+    <footer>YL &copy Copyright 2020 March</footer>
+</body>
+
+</html>

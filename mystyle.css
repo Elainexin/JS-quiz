@@ -1,0 +1,78 @@
+body{
+    margin: 0 30%;
+    background-color:lightsteelblue;
+    font-size: 100%;
+  
+
+   
+}
+header{
+    background-color:lightsteelblue;
+    background-image: url(img/canada0.jpg);
+    background-size: cover;
+    background-position: left;
+    float: left;
+    width: 100%;
+}
+main {
+    width: 100%;
+    float: left;
+    height: 370px;
+
+    
+}
+footer{
+    width: 100%;
+    float: left;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+   
+}
+main h3 {
+   padding-top: 14px;
+}
+p {
+    font-size: 120%;
+}
+
+form{
+    padding: 0 8%;
+}
+
+
+.questions div{
+    font-size: 108%;
+}
+main h3{
+    text-align: center;
+}
+/* center all buttons */
+#startbutton{
+    text-align: center;
+}
+#next{
+    margin-top: 10px;
+    text-align: center;
+
+}
+#end{
+    text-align: center;
+}
+
+/* result section */
+#after_submit {
+	visibility: hidden;
+    float: left;
+    text-align: center;
+	
+}
+#number_correct{
+    margin-bottom: 5px;
+}
+#picture {
+    padding: 0 20%;
+    width: 100%;
+    height: 100px;
+
+}
