@@ -1,5 +1,5 @@
 
-
+var UserAnswers =[];
 
 function nextquestion(){
 	current = document.getElementById("current_show_ques").value;
@@ -52,49 +52,40 @@ function checkRadio(questionID){
         }
     }
     return val;
-
 }
 
+
+
 function checkAnswers(){
-    var question1 = checkRadio("question1");
-    var question2 = checkRadio("question2");
-    var question3 = checkRadio("question3");
-    var question4 = checkRadio("question4");
-    var question5 = checkRadio("question5");
-    var question6 = checkRadio("question6");
-    var question7 = checkRadio("question7");
-    var question8 = checkRadio("question8");
-    var question9 = checkRadio("question9");
-    var question10 = checkRadio("question10");
     var correct = 0;
-    if (question1 == 2){
+    if (document.getElementsByName("question1")[2].checked){
         correct++;
     }
-    if (question2 == 2){
+    if (document.getElementsByName("question2")[2].checked){
         correct++;
     }
-    if (question3 == 1){
+    if (document.getElementsByName("question3")[1].checked){
         correct++;
     }
-    if (question4 == 0){
+    if (document.getElementsByName("question4")[0].checked){
         correct++;
     }
-    if (question5 == 1){
+    if (document.getElementsByName("question5")[1].checked){
         correct++;
     }
-    if (question6 == 2){
+    if (document.getElementsByName("question6")[2].checked){
         correct++;
     }
-    if (question7 == 3){
+    if (document.getElementsByName("question7")[3].checked){
         correct++;
     }
-    if (question8 == 2){
+    if (document.getElementsByName("question8")[2].checked){
         correct++;
     }
-    if (question9 == 1){
+    if (document.getElementsByName("question9")[1].checked){
         correct++;
     }
-    if (question10 == 3){
+    if (document.getElementsByName("question10")[3].checked){
         correct++;
     }
     var messages = ["Good Job! You Know Canada very well!", "Not Bad! Do better next time!", "Oops...Try it Again!"];
@@ -113,7 +104,10 @@ function checkAnswers(){
     document.getElementById("number_correct").innerHTML = "You got " + correct +" questions correct.";
     document.getElementById("message").innerHTML = messages[feedback];
     document.getElementById("picture").src = pictures[feedback];
-  
+    for (i=0;i<10;i++){  
+        j = i+1
+        UserAnswers[i]= checkRadio("question"+j);
+    }
 
 }
 
