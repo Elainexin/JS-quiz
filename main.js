@@ -1,5 +1,7 @@
 
 var UserAnswers =[];
+var CorrectAnswers =[2,2,1,0,1,2,3,2,1,3];
+
 
 function nextquestion(){
 	current = document.getElementById("current_show_ques").value;
@@ -35,8 +37,6 @@ function starttest(){
     nextquestion();
 }
 
-
-
 function checkRadio(questionID){
     var val;
     var questionList = document.getElementsByName(questionID);
@@ -50,40 +50,19 @@ function checkRadio(questionID){
     return val;
 }
 
-
-
 function checkAnswers(){
     var correct = 0;
-    if (document.getElementsByName("question1")[2].checked){
-        correct++;
+    // store user answers and check marks;
+    for (i=0;i<10;i++){  
+        j = i+1
+        UserAnswers[i]= checkRadio("question"+j);
+        if(UserAnswers[i]==CorrectAnswers[i]){
+            correct++;
+        }
     }
-    if (document.getElementsByName("question2")[2].checked){
-        correct++;
-    }
-    if (document.getElementsByName("question3")[1].checked){
-        correct++;
-    }
-    if (document.getElementsByName("question4")[0].checked){
-        correct++;
-    }
-    if (document.getElementsByName("question5")[1].checked){
-        correct++;
-    }
-    if (document.getElementsByName("question6")[2].checked){
-        correct++;
-    }
-    if (document.getElementsByName("question7")[3].checked){
-        correct++;
-    }
-    if (document.getElementsByName("question8")[2].checked){
-        correct++;
-    }
-    if (document.getElementsByName("question9")[1].checked){
-        correct++;
-    }
-    if (document.getElementsByName("question10")[3].checked){
-        correct++;
-    }
+    // if (document.getElementsByName("question1")[2].checked){
+    //     correct++;
+    // }
     var messages = ["Good Job! You Know Canada very well!", "Not Bad! Do better next time!", "Oops...Try it Again!"];
     var pictures = ["img/win.gif","img/meh.gif","img/lose.gif"]
     var feedback;
@@ -100,11 +79,6 @@ function checkAnswers(){
     document.getElementById("number_correct").innerHTML = "You got " + correct +" questions correct.";
     document.getElementById("message").innerHTML = messages[feedback];
     document.getElementById("picture").src = pictures[feedback];
-    for (i=0;i<10;i++){  
-        j = i+1
-        UserAnswers[i]= checkRadio("question"+j);
-    }
-
 }
 
 function showAll(){
