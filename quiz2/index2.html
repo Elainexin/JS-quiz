@@ -7,7 +7,7 @@
     <title>Discover Canada Quiz Project</title>
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
-    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="mystyle2.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="main2.js"></script>
 
@@ -23,9 +23,12 @@
     <main>
         <div>
             <h3>Instruction</h3>
-            <p>This quiz is designed for a better understanding of Canada. The Total Number of Questions is 10. Take
+            <p >This quiz is designed for a better understanding of Canada. The Total Number of Questions is <label id="totalQues"></label>. Take
                 Your
                 time and enjoy the quiz!</p>
+             <script>
+                 document.getElementById("totalQues").innerHTML=' '+total;
+             </script>
         </div>
         <div id="testNote">
             <h4>NOTE</h4>
@@ -61,25 +64,27 @@
         <form class="ui form">
             <div id="showquesbox" style="display: none;">
                 <!-- question -->
-                <div >
-                    <div >
-                        <label id="number" for="question"></label> <div id="question">  </div>
-                       
+                <div>
+                    <div>
+                        <label id="number" for="question"></label>
+                        <div id="question"> </div>
+
                     </div>
                     <div>
-                        <div class="choice"><input type="radio" id="ch0" name="choices" value="0"> <label id="label0" for="cho0"></label> </div>
-                        <div class="choice"><input type="radio" id="ch1" name="choices" value="1"> <label id="label1" for="cho1"></label></div>
-                        <div class="choice"><input type="radio" id="ch2" name="choices" value="2"> <label id="label2" for="cho2"></label></div>
-                        <div class="choice"><input type="radio" id="ch3" name="choices" value="3">  <label id="label3"for="cho3"></label></div>
+                        <div class="choice" id="choice0"> </div>
+                        <div class="choice" id="choice1"></div>
+                        <div class="choice" id="choice2"></div>
+                        <div class="choice" id="choice3"></div>
                     </div>
                 </div>
-                <!-- the Prev button -->
-                <div id="prev">
-                    <div class="small ui animated button"  type="button" id="prev" 
-                        onclick="nextquestion(2)">
-                        <div class="visible content">Prev</div>
+
+                <!-- the next button -->
+                <div id="next">
+                    <div class="small ui animated button" tabindex="0" type="button" name="next" id="next" value="Next"
+                        onclick="nextquestion()">
+                        <div class="visible content">Next</div>
                         <div class="hidden content">
-                            <i class="left arrow icon"></i>
+                            <i class="right arrow icon"></i>
                         </div>
                     </div>
                 </div>
@@ -87,16 +92,6 @@
                 <div id="end">
                     <button class="small ui primary button" type="button" name="endtest" id="endtest"
                         style="visibility:hidden;" value="Submit" onclick="checkAnswers()">Submit</button>
-                </div>
-                <!-- the next button -->
-                <div id="next">
-                    <div class="small ui animated button" tabindex="0" type="button" name="next" id="next" value="Next"
-                        onclick="nextquestion(1)">
-                        <div class="visible content">Next</div>
-                        <div class="hidden content">
-                            <i class="right arrow icon"></i>
-                        </div>
-                    </div>
                 </div>
 
             </div>

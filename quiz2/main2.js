@@ -21,65 +21,58 @@ var quesData = [
     }
 ]
 var total = quesData.length;
+
 var correct = 0;
 
-function createChoices(action){
-    input = document.createElement(input);
-    input.setAttribute("type","radio");
-    input.setAttribute("id","ch0"+current);
-    input.setAttribute("name","ques"+current);
 
 
+// create radio input boxes 
+function createChoices() {
+    for (i = 0; i < 4; i++) {
+        input = document.createElement("input");
+        input.setAttribute("type", "radio");
+        input.setAttribute("id", "ch" + i + current);
+        input.setAttribute("name", "ques" + current);
+        input.setAttribute("value", i);
+        label = document.createElement("label");
+        label.setAttribute("id", "label" + i + current);
+        label.setAttribute("for", "ch" + i + current);
+        var lastQues = document.getElementById('choice' + i);
+        while (lastQues.hasChildNodes()) {
+            lastQues.removeChild(lastQues.firstChild);
+        }
+        document.getElementById('choice' + i).appendChild(input);
+        document.getElementById('choice' + i).appendChild(label);
+    }
 }
 
+function nextquestion() {
 
-function nextquestion(action) {
-    if (action == 1) {
-        current++;
-    } else {
-        current--;
+    current++;
+    // store user choices and correct answers 
+
+    if (current > 1) {
+        k = current - 2;
+        j = current - 1;
+        UserAnswers[k] = checkRadio("ques" + j);
+        CorrectAnswers[k] = quesData[k].answ;
     }
-    // checked or not
-    // answeredNum=UserAnswers.length;
-    // if (current<=answeredNum && current >0){
-    //     // set previous checked answer
-    //     prevChoice=UserAnswers[current-1];
-    //     document.getElementsByName("choices")[prevChoice].checked = true;
-    // } 
 
-
+    // clear and create input radio and label
+    createChoices();
     document.getElementById("number").innerHTML = current + ". ";
     document.getElementById("question").innerHTML = quesData[current - 1].ques;
     for (i = 0; i < 4; i++) {
-        document.getElementById("label" + i).innerHTML = quesData[current - 1].choices[i];
+        document.getElementById("label" + i + current).innerHTML = quesData[current - 1].choices[i];
     }
-    // store user choices and correct answers 
-    if (action==1){
-        if (current > 1) {
-            k = current - 2;
-            UserAnswers[k] = checkRadio("choices");
-            CorrectAnswers[k] = quesData[k].answ;
-        }
-    } else{
-        UserAnswers[current] = checkRadio("choices");
-            CorrectAnswers[current] = quesData[current].answ;
-    } 
 
-
-
-
-// button display
-if (current <= 1) {
-    document.getElementById("prev").style.display = "none";
-} else {
-    document.getElementById("prev").style.display = "block";
-}
-
-if (current >= total) {
-    document.getElementById("next").style.display = "none";
-} else {
-    document.getElementById("next").style.display = "block";
-}
+    // button display
+    if (current >= total) {
+        document.getElementById("next").style.display = "none";
+        document.getElementById("endtest").style.visibility="visible";
+    } else {
+        document.getElementById("next").style.display = "";
+    }
 }
 function starttest() {
     document.getElementById('showquesbox').style.display = "block";
@@ -105,25 +98,24 @@ function checkRadio(questionName) {
 }
 
 function checkAnswers() {
-    var correct = 0;
-    // store user answers and check marks;
-    for (i = 0; i < 10; i++) {
-        j = i + 1
-        UserAnswers[i] = checkRadio("question" + j);
+    // store the last chice and correct answers 
+        k = current - 1;
+        UserAnswers[k] = checkRadio("ques" + current);
+        CorrectAnswers[k] = quesData[k].answ;
+    // check marks;
+    for (i = 0; i < UserAnswers.length; i++) {
         if (UserAnswers[i] == CorrectAnswers[i]) {
             correct++;
         }
     }
-    // if (document.getElementsByName("question1")[2].checked){
-    //     correct++;
-    // }
+
     var messages = ["Good Job! You Know Canada very well!", "Not Bad! Do better next time!", "Oops...Try it Again!"];
-    var pictures = ["img/win.gif", "img/meh.gif", "img/lose.gif"]
+    var pictures = ["../img/win.gif", "../img/meh.gif", "../img/lose.gif"]
     var feedback;
 
-    if (correct == 10) {
+    if (correct == total) {
         feedback = 0;
-    } else if (correct >= 6) {
+    } else if (correct > total/2) {
         feedback = 1;
     } else {
         feedback = 2;
