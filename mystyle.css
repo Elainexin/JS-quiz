@@ -69,12 +69,17 @@ main h3{
 #startbutton{
     text-align: center;
 }
+#prev{
+    float: left;
+    margin-right: 10px;
+}
 #next{
-    margin-top: 10px;
     text-align: center;
-
+    float: left;
+    margin-left: 10px;
 }
 #end{
+    float: left;
     text-align: center;
 }
 
@@ -99,4 +104,9 @@ main h3{
     margin-left: 10px;
     margin-right: 10px;
 
+}
+
+
+#question{
+    display: inline-block;
 }

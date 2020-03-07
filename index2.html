@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Canada Quiz Project</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="main2.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h2 class="ui center aligned icon  header ">
+            <i class=" heart outline icon"></i>
+            Discover Canada
+        </h2>
+    </header>
+    <main>
+        <div>
+            <h3>Instruction</h3>
+            <p>This quiz is designed for a better understanding of Canada. The Total Number of Questions is 10. Take
+                Your
+                time and enjoy the quiz!</p>
+        </div>
+        <div id="testNote">
+            <h4>NOTE</h4>
+            <div class="ui list" id="notecontent">
+                <div class="item">
+                    <i class="right triangle icon"></i>
+                    <div class="content">
+                        <div class="description">Click the 'START QUIZ' button given in the bottom of this page to Start
+                            the test.</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="right triangle icon"></i>
+                    <div class="content">
+                        <div class="description">You don't lose mark for wrong answers.</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="right triangle icon"></i>
+                    <div class="content">
+                        <div class="description">Do not refresh the page during the test.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start button -->
+        <div id="startbutton">
+            <button class="small ui primary button start" type="button" name="starttest" id="starttest"
+                value="START TEST" onclick="starttest()">START QUIZ</button>
+        </div>
+
+        <!-- question form -->
+        <form class="ui form">
+            <div id="showquesbox" style="display: none;">
+                <!-- question -->
+                <div >
+                    <div >
+                        <label id="number" for="question"></label> <div id="question">  </div>
+                       
+                    </div>
+                    <div>
+                        <div class="choice"><input type="radio" id="ch0" name="chioces" value="0"> <label id="label0" for="cho0"></label> </div>
+                        <div class="choice"><input type="radio" id="ch1" name="chioces" value="1"> <label id="label1" for="cho1"></label></div>
+                        <div class="choice"><input type="radio" id="ch2" name="chioces" value="2"> <label id="label2" for="cho2"></label></div>
+                        <div class="choice"><input type="radio" id="ch3" name="chioces" value="3">  <label id="label3"for="cho3"></label></div>
+                    </div>
+                </div>
+                <!-- the Prev button -->
+                <div id="prev">
+                    <div class="small ui animated button" tabindex="0" type="button" name="prev" id="prev" value="Prev"
+                        onclick="nextquestion(2)">
+                        <div class="visible content">Prev</div>
+                        <div class="hidden content">
+                            <i class="left arrow icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- submit quiz button -->
+                <div id="end">
+                    <button class="small ui primary button" type="button" name="endtest" id="endtest"
+                        style="visibility:hidden;" value="Submit" onclick="checkAnswers()">Submit</button>
+                </div>
+                <!-- the next button -->
+                <div id="next">
+                    <div class="small ui animated button" tabindex="0" type="button" name="next" id="next" value="Next"
+                        onclick="nextquestion(1)">
+                        <div class="visible content">Next</div>
+                        <div class="hidden content">
+                            <i class="right arrow icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- the result section -->
+            <div id="after_submit">
+                <p id="number_correct"></p>
+                <p id="message"></p>
+                <img id="picture">
+                <button class="small ui primary button" type="button" onclick="showAll()">Check Answers</button>
+            </div>
+
+        </form>
+
+    </main>
+    <footer>YL &copy Copyright 2020 March</footer>
+</body>
+
+</html>

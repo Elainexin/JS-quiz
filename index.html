@@ -37,7 +37,7 @@
                             the test.</div>
                     </div>
                 </div>
-         
+
                 <div class="item">
                     <i class="right triangle icon"></i>
                     <div class="content">
@@ -47,10 +47,9 @@
                 <div class="item">
                     <i class="right triangle icon"></i>
                     <div class="content">
-                        <div class="description">Do not refresh the Page during the test.</div>
+                        <div class="description">Do not refresh the page during the test.</div>
                     </div>
                 </div>
-
             </div>
         </div>
         <!-- start button -->
@@ -62,7 +61,7 @@
         <form class="ui form" name="quiz">
             <div id="showquesbox" style="display: none;">
                 <!-- question 1 -->
-                <div class="questions" id="ques1" a>
+                <div class="questions" id="ques1" >
                     <div class="questions">
                         <div>1. What are Canada's official languages? </div>
                     </div>
@@ -140,7 +139,7 @@
                     <div class="answers">
                         <div class="choice"><input type="radio" name="question6" value="0"> A. About 24 million</div>
                         <div class="choice"><input type="radio" name="question6" value="1"> B. About 31 million</div>
-                        <div class="choice"><input type="radio" name="question6" value="2"> C. About 34 million</div>
+                        <div class="choice"><input type="radio" name="question6" value="2"> C. About 38 million</div>
                         <div class="choice"><input type="radio" name="question6" value="3"> D. About 42 million </div>
                     </div>
                 </div>
@@ -210,13 +209,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- the next button -->
-                <div id="next">
-                    <div class="small ui animated button" tabindex="0" type="button" name="next" id="next" value="Next"
-                        onclick="nextquestion()">
-                        <div class="visible content">Next</div>
+                <!-- the Prev button -->
+                <div id="prev">
+                    <div class="small ui animated button" tabindex="0" type="button" name="prev" id="prev" value="Prev"
+                        onclick="nextquestion(2)">
+                        <div class="visible content">Prev</div>
                         <div class="hidden content">
-                            <i class="right arrow icon"></i>
+                            <i class="left arrow icon"></i>
                         </div>
                     </div>
                 </div>
@@ -225,12 +224,22 @@
                     <button class="small ui primary button" type="button" name="endtest" id="endtest"
                         style="visibility:hidden;" value="Submit" onclick="checkAnswers()">Submit</button>
                 </div>
+                <!-- the next button -->
+                <div id="next">
+                    <div class="small ui animated button" tabindex="0" type="button" name="next" id="next" value="Next"
+                        onclick="nextquestion(1)">
+                        <div class="visible content">Next</div>
+                        <div class="hidden content">
+                            <i class="right arrow icon"></i>
+                        </div>
+                    </div>
+                </div>
+                
 
 
             </div>
 
-            <input type="hidden" id="current_show_ques" value="0">
-            <input type="hidden" id="total_question" value="10">
+
             <!-- the result section -->
             <div id="after_submit">
                 <p id="number_correct"></p>

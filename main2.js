@@ -2,28 +2,39 @@
 var UserAnswers =[];
 var CorrectAnswers =[2,2,1,0,1,2,3,2,1,3];
 var current=0;
-var total =10;
+var quesData=[
+    {ques:"What are Canada's official languages?",
+    answ:["A. English and Acadian","B. French, English and Michif","C. English and French","D. French, English and Inuktitut" ]},
+    {ques:"What's the only official bilingual province in Canada?",
+    answ:["A. Quebec","B. Ontari","C. New Brunswic,","D. Manitoba" ]},
+
+
+]
+var total =quesData.length;
+
 
 function nextquestion(action){
-	if(current > 0)
-	{
-		document.getElementById("ques"+current).style.display = "none";
+    j= current+1;
+    document.getElementById("number").innerHTML=j +". ";
+    document.getElementById("question").innerHTML=quesData[current].ques;
+    for(i=0;i<4;i++){
+    document.getElementById("label"+i).innerHTML=quesData[current].answ[i];
     }
     if (action==1){
         current++;
     } else {
         current--;
     }
-	if(current == 0)
+	if(current < 0)
 	{
-		current = 1;
+		current = 0;
 	}
-	if(current > total)
+	if(current == total)
 	{
-		current = total;
-	}
-    document.getElementById("ques"+current).style.display = "block";
-    if (current == total){
+		current = total-1;
+    }
+
+    if (current == total-1){
         document.getElementById("next").disabled="disabled";
         // document.getElementById("next").style.display="none";
         document.getElementById("endtest").style.visibility="visible";
