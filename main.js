@@ -57,8 +57,20 @@ function checkAnswers(){
     for (i=0;i<10;i++){  
         j = i+1
         UserAnswers[i]= checkRadio("question"+j);
-        if(UserAnswers[i]==CorrectAnswers[i]){
+        index=UserAnswers[i];
+        correcIndex=CorrectAnswers[i];
+        document.getElementById("ques"+j).style.display="";
+        document.getElementById('ques'+j).getElementsByClassName('choice')[correcIndex].style.border="1px solid green";
+        if(index==correcIndex){
             correct++;
+            document.getElementById('ques'+j).getElementsByClassName('choice')[index].style.color="green";
+            // document.getElementsByName("question"+j)[index].style.color ="green";
+        } else{
+            // document.getElementsByName("question"+j)[correcIndex].style.background ="green";
+            if (document.getElementsByName("question"+j)[index]){
+                document.getElementById("ques"+j).getElementsByClassName('choice')[index].style.color ="red";
+            }
+
         }
     }
     // if (document.getElementsByName("question1")[2].checked){
@@ -75,13 +87,19 @@ function checkAnswers(){
     } else {
         feedback =2;
     }
-    document.getElementById("showquesbox").style.display ="none";
-    document.getElementById("after_submit").style.visibility = "visible";
+    document.getElementById("showquesbox").style.display ="";
+    document.getElementById("prev").style.display ="none";
+    document.getElementById("next").style.display ="none";
+    document.getElementById("end").style.display ="none";
+
+    document.getElementById("after_submit").style.display = "";
     document.getElementById("number_correct").innerHTML = "You got " + correct +" questions correct.";
     document.getElementById("message").innerHTML = messages[feedback];
     document.getElementById("picture").src = pictures[feedback];
+            
 }
 
-function showAll(){
-    window.open("result.html","_self","");
+
+function showAll() {
+    window.open("index.html", "_self", "");
 }

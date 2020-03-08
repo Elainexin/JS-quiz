@@ -52,16 +52,25 @@
                 </div>
             </div>
         </div>
+         <!-- the result section -->
+         <div id="after_submit" style="display:none">
+            <p id="number_correct"></p>
+            <p id="message"></p>
+            <img id="picture">
+            <button class="small ui primary button" type="button" onclick="showAll()">Try Again</button>
+        </div>
         <!-- start button -->
         <div id="startbutton">
             <button class="small ui primary button start" type="button" name="starttest" id="starttest"
                 value="START TEST" onclick="starttest()">START QUIZ</button>
         </div>
+                  
         <!-- question form -->
         <form class="ui form" name="quiz">
-            <div id="showquesbox" style="display: none;">
+            <div id="showquesbox" style="display:none;">
+  
                 <!-- question 1 -->
-                <div class="questions" id="ques1" >
+                <div class="questions" id="ques1">
                     <div class="questions">
                         <div>1. What are Canada's official languages? </div>
                     </div>
@@ -234,19 +243,14 @@
                         </div>
                     </div>
                 </div>
-                
+                   
+
 
 
             </div>
 
 
-            <!-- the result section -->
-            <div id="after_submit">
-                <p id="number_correct"></p>
-                <p id="message"></p>
-                <img id="picture">
-                <button class="small ui primary button" type="button" onclick="showAll()">Check Answers</button>
-            </div>
+
 
         </form>
 

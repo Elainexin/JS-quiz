@@ -17,7 +17,7 @@ header{
 main {
     width: 100%;
     float: left;
-    height: 370px;
+
 
     
 }
@@ -52,11 +52,18 @@ form{
     margin-right: 10%;
 }
 
+.questions{
+    float: left;
+}
+.answers{
+    float: left;
+}
 
 .questions div{
     font-size: 108%;
     font-weight: bold;
     margin-bottom: 10px;
+
 }
 .answers .choice {
     font-size: 108%;
@@ -75,17 +82,16 @@ main h3{
 }
 #next{
     text-align: center;
-    float: right;
+    float: left;
     margin-left: 10px;
 }
 #end{
-    float: right;
+    float: left;
     text-align: center;
 }
 
 /* result section */
 #after_submit {
-	visibility: hidden;
     float: left;
     text-align: center;
 	
