@@ -94,6 +94,7 @@ main h3{
 #after_submit {
     float: left;
     text-align: center;
+    margin: 5px 20%;
 	
 }
 #number_correct{
@@ -103,7 +104,9 @@ main h3{
     padding: 0 20%;
     height: 110px;
 
+
 }
+
 
 #notecontent{
     margin-bottom: 14px;

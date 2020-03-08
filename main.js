@@ -3,7 +3,7 @@ var UserAnswers =[];
 var CorrectAnswers =[2,2,1,0,1,2,3,2,1,3];
 var current=0;
 var total =10;
-
+var correct = 0;
 function nextquestion(action){
 	if(current > 0)
 	{
@@ -52,27 +52,16 @@ function checkRadio(questionID){
 }
 
 function checkAnswers(){
-    var correct = 0;
+    document.getElementById("showquesbox").style.display ="none";
     // store user answers and check marks;
     for (i=0;i<10;i++){  
         j = i+1
         UserAnswers[i]= checkRadio("question"+j);
-        index=UserAnswers[i];
-        correcIndex=CorrectAnswers[i];
-        document.getElementById("ques"+j).style.display="";
-        document.getElementById('ques'+j).getElementsByClassName('choice')[correcIndex].style.border="1px solid green";
-        if(index==correcIndex){
+        if(UserAnswers[i]==CorrectAnswers[i]){
             correct++;
-            document.getElementById('ques'+j).getElementsByClassName('choice')[index].style.color="green";
-            // document.getElementsByName("question"+j)[index].style.color ="green";
-        } else{
-            // document.getElementsByName("question"+j)[correcIndex].style.background ="green";
-            if (document.getElementsByName("question"+j)[index]){
-                document.getElementById("ques"+j).getElementsByClassName('choice')[index].style.color ="red";
-            }
-
+            }    
         }
-    }
+
     // if (document.getElementsByName("question1")[2].checked){
     //     correct++;
     // }
@@ -87,7 +76,7 @@ function checkAnswers(){
     } else {
         feedback =2;
     }
-    document.getElementById("showquesbox").style.display ="";
+    
     document.getElementById("prev").style.display ="none";
     document.getElementById("next").style.display ="none";
     document.getElementById("end").style.display ="none";
@@ -99,7 +88,26 @@ function checkAnswers(){
             
 }
 
+function showAll(){
+    document.getElementById("showquesbox").style.display ="";
+    for (i=0;i<10;i++){  
+        j = i+1
+        index=UserAnswers[i];
+        correcIndex=CorrectAnswers[i];
+        document.getElementById("ques"+j).style.display="";
+        document.getElementById('ques'+j).getElementsByClassName('choice')[correcIndex].style.border="1px solid green";
+        if(index==correcIndex){
+            document.getElementById('ques'+j).getElementsByClassName('choice')[index].style.color="green";
+        } else{
+            if (document.getElementsByName("question"+j)[index]){
+                document.getElementById("ques"+j).getElementsByClassName('choice')[index].style.color ="red";
+            }
 
-function showAll() {
+        }
+    }
+
+}
+
+function tryAgain() {
     window.open("index.html", "_self", "");
 }
