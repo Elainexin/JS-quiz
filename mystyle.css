@@ -54,9 +54,12 @@ form{
 
 .questions{
     float: left;
+    clear: both;
+
 }
 .answers{
     float: left;
+    clear: both;
 }
 
 .questions div{
@@ -78,6 +81,7 @@ main h3{
 }
 #prev{
     float: left;
+    clear: left;
     margin-right: 10px;
 }
 #next{
