@@ -128,5 +128,5 @@ function checkAnswers() {
 }
 
 function showAll() {
-    window.open("result.html", "_self", "");
+    window.open("index2.html", "_self", "");
 }
